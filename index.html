@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社ULDNLC 公式サイト</title>
+    <!-- Tailwind CSSを読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fontsを読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&family=Cabin:wght@700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;700&family=Zen+Old+Mincho:wght@400;500;600;700;900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=EB+Garamond:wght@400&display=swap"
+        rel="stylesheet">
+    <!-- 外部CSSファイルを読み込み -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased">
+    <div class="wrapper">
+        <!-- ヘッダー -->
+        <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-black">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center relative">
+                <div>
+                    <a href="#">
+                        <img src="image/uldnlc-logo2.jpeg" alt="ULDNLC Innovations Logo" class="h-12 w-auto">
+                    </a>
+                </div>
+                <!-- PC用ナビゲーション (md以上で表示) -->
+                <nav
+                    class="hidden md:flex items-center md:space-x-4 lg:space-x-8 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
+                    <a href="#about"
+                        class="nav-link text-sm lg:text-base text-gray-300 hover:text-white transition-colors border-b-2 border-transparent hover:border-white pb-1 whitespace-nowrap">会社概要</a>
+                    <a href="#portfolio"
+                        class="nav-link text-sm lg:text-base text-gray-300 hover:text-white transition-colors border-b-2 border-transparent hover:border-white pb-1 whitespace-nowrap">実績</a>
+                    <a href="#flow"
+                        class="nav-link text-sm lg:text-base text-gray-300 hover:text-white transition-colors border-b-2 border-transparent hover:border-white pb-1 whitespace-nowrap">制作フロー</a>
+                    <a href="#policy"
+                        class="nav-link text-sm lg:text-base text-gray-300 hover:text-white transition-colors border-b-2 border-transparent hover:border-white pb-1 whitespace-nowrap">ULDNLCとは</a>
+                    <a href="#news"
+                        class="nav-link text-sm lg:text-base text-gray-300 hover:text-white transition-colors border-b-2 border-transparent hover:border-white pb-1 whitespace-nowrap">お知らせ</a>
+                    <a href="#contact"
+                        class="nav-link text-sm lg:text-base text-gray-300 hover:text-white transition-colors border-b-2 border-transparent hover:border-white pb-1 whitespace-nowrap">ご依頼</a>
+                    <a href="#privacy-policy"
+                        class="nav-link text-sm lg:text-base text-gray-300 hover:text-white transition-colors border-b-2 border-transparent hover:border-white pb-1 whitespace-nowrap">ポリシー</a>
+                </nav>
+                <!-- モバイル用メニューボタン (md未満で表示) -->
+                <button id="menu-button" class="md:hidden z-50 menu-trigger space-y-2">
+                    <span class="block w-8 h-0.5 bg-white"></span>
+                    <span class="block w-8 h-0.5 bg-white"></span>
+                    <span class="block w-8 h-0.5 bg-white"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- モバイル用ナビゲーション -->
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-95 z-40 md:hidden">
+            <nav class="flex flex-col items-center justify-center h-full space-y-8">
+                <a href="#about"
+                    class="mobile-nav-link text-2xl text-gray-300 hover:text-white transition-colors">会社概要</a>
+                <a href="#portfolio"
+                    class="mobile-nav-link text-2xl text-gray-300 hover:text-white transition-colors">実績</a>
+                <a href="#flow"
+                    class="mobile-nav-link text-2xl text-gray-300 hover:text-white transition-colors">制作フロー</a>
+                <a href="#policy"
+                    class="mobile-nav-link text-2xl text-gray-300 hover:text-white transition-colors">ULDNLCとは</a>
+                <a href="#news"
+                    class="mobile-nav-link text-2xl text-gray-300 hover:text-white transition-colors">お知らせ</a>
+                <a href="#contact"
+                    class="mobile-nav-link text-2xl text-gray-300 hover:text-white transition-colors">ご依頼</a>
+                <a href="#privacy-policy"
+                    class="mobile-nav-link text-2xl text-gray-300 hover:text-white transition-colors">ポリシー</a>
+            </nav>
+        </div>
+
+        <main>
+            <!-- メインビュー -->
+            <section class="h-screen flex items-center justify-center text-center relative">
+                <div class="video-container">
+                    <video id="bg-video" src="image/uldnlc-video3-mini.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <div class="video-overlay"></div>
+                <div class="scanline-overlay"></div>
+                <div class="z-10 px-4">
+                    <h1 class="text-5xl md:text-8xl font-black uppercase tracking-widest leading-tight">
+                        ULDNLC
+                    </h1>
+                    <p class="mt-4 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+                        Creative Beyond Limits
+                    </p>
+                </div>
+            </section>
+
+            <!-- 会社概要 -->
+            <section id="about" class="py-20 md:py-32 bg-black">
+                <div class="container mx-auto px-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-start">
+                        <!-- Left Column: Images -->
+                        <div class="scroll-fade flex flex-col items-start gap-8">
+                            <img src="image/free_image1.webp" alt="image1"
+                                class="w-full md:w-3/4 ml-auto rounded-lg shadow-2xl">
+                            <img src="image/free_image2.webp" alt="image2"
+                                class="w-full md:w-1/2 rounded-lg shadow-2xl">
+                        </div>
+                        <!-- Right Column: Text and Links -->
+                        <div class="scroll-fade md:pt-16" style="transition-delay: 200ms;">
+                            <h3 class="text-2xl font-bold text-white mb-4 font-cormorant">Vision｜ビジョン</h3>
+                            <p class="text-gray-400 leading-relaxed font-cormorant">
+                                表現を必要とするすべての人に寄り添い、創造が社会に革新的なイノベーションを生む未来をつくる。
+                                クリエイティブを通して、社会の新たな動きを生み出す存在を目指します。
+                            </p>
+                            <h3 class="text-2xl font-bold text-white mb-4 mt-8 font-cormorant">Mission｜ミッション</h3>
+                            <p class="text-gray-400 leading-relaxed font-cormorant">
+                                あらゆる人・作品が持つ潜在的な価値とオリジナリティを引き出し、その魅力を世界へ届ける。
+                                ULDNLCは表現の力で、まだ見えていない「可能性」をカタチにする制作会社です。
+                            </p>
+                            <div class="mt-12 space-y-6">
+                                <a href="#portfolio"
+                                    class="flex justify-between items-center text-lg text-white hover:text-blue-500 transition-colors pb-2 border-b border-gray-700">
+                                    <span>実績</span>
+                                    <span class="text-sm text-gray-400">View More</span>
+                                </a>
+                                <a href="#flow"
+                                    class="flex justify-between items-center text-lg text-white hover:text-blue-500 transition-colors pb-2 border-b border-gray-700">
+                                    <span>制作フロー</span>
+                                    <span class="text-sm text-gray-400">View More</span>
+                                </a>
+                                <a href="#contact"
+                                    class="flex justify-between items-center text-lg text-white hover:text-blue-500 transition-colors pb-2 border-b border-gray-700">
+                                    <span>ご依頼はこちらから</span>
+                                    <span class="text-sm text-gray-400">View More</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ポートフォリオ (実績) -->
+            <section id="portfolio" class="py-20 md:py-32 bg-gray-900 relative">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold scroll-glitch" data-text="PORTFOLIO">PORTFOLIO</h2>
+                        <p class="text-gray-400 mt-2 scroll-fade font-zen-old-mincho">過去の実績</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- 実績アイテム 1 -->
+                        <div class="bg-gray-800 rounded-lg overflow-hidden group scroll-fade">
+                            <img src="image/ポートフォリオイメージ画像4.png" alt="image3"
+                                class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-4 font-cormorant">ブランドムービー制作</h3>
+                                <div class="text-sm text-gray-400 space-y-1 font-noto-serif">
+                                    <p><span class="text-white font-bold">Client:</span> Caramel's Guitar Kitchen</p>
+                                    <p><span class="text-white font-bold">Year:</span> 2025/7</p>
+                                    <p><span class="text-white font-bold">Role:</span> Direction / Planning / Shoot /
+                                        Edit / Casting / Operation</p>
+                                    <p><span class="text-white font-bold">Deliverables:</span> Main Film(SNS、youtube用)
+                                    </p>
+                                    <p><span class="text-white font-bold">Notes:</span> pop/energetic</p>
+                                    <p class="break-all"><span class="text-white font-bold">Link:</span> <a
+                                            href="https://youtu.be/s2iPoNgfv1c?si=HfFrDZ3VNpIXFOLJ" target="_blank"
+                                            class="text-blue-400 hover:underline">https://youtu.be/s2iPoNgfv1c?si=HfFrDZ3VNpIXFOLJ</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 実績アイテム 2 -->
+                        <div class="bg-gray-800 rounded-lg overflow-hidden group scroll-fade"
+                            style="transition-delay: 100ms;">
+                            <img src="image/ポートフォリオイメージ画像5.png" alt="image4"
+                                class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-4 font-cormorant">MV制作</h3>
+                                <div class="text-sm text-gray-400 space-y-1 font-noto-serif">
+                                    <p><span class="text-white font-bold">Client:</span> lil bluesky</p>
+                                    <p><span class="text-white font-bold">Year:</span> 2024/12</p>
+                                    <p><span class="text-white font-bold">Role:</span> Direction / Planning / Shoot /
+                                        Edit / Recording / Mix/Mastering/Operation</p>
+                                    <p><span class="text-white font-bold">Deliverables:</span> Main Film(youtube用)</p>
+                                    <p><span class="text-white font-bold">Notes:</span> nostalgic/chill</p>
+                                    <p class="break-all"><span class="text-white font-bold">Link:</span> <a
+                                            href="https://youtu.be/IhyWkaBU2_I?si=1IJCjRgBinEn7otX" target="_blank"
+                                            class="text-blue-400 hover:underline">https://youtu.be/IhyWkaBU2_I?si=1IJCjRgBinEn7otX</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 実績アイテム 3 -->
+                        <div class="bg-gray-800 rounded-lg overflow-hidden group scroll-fade"
+                            style="transition-delay: 200ms;">
+                            <img src="image/ポートフォリオイメージ画像6.png" alt="image5"
+                                class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-4 font-cormorant">イベントアフタームービー制作</h3>
+                                <div class="text-sm text-gray-400 space-y-1 font-noto-serif">
+                                    <p><span class="text-white font-bold">Client:</span> 島村楽器</p>
+                                    <p><span class="text-white font-bold">Year:</span> 2025/9</p>
+                                    <p><span class="text-white font-bold">Role:</span> Direction / Planning / Shoot /
+                                        Edit /Operation</p>
+                                    <p><span class="text-white font-bold">Deliverables:</span> Main Film(SNS用)</p>
+                                    <p><span class="text-white font-bold">Notes:</span> documentary/cinematic</p>
+                                    <p class="break-all"><span class="text-white font-bold">Link:</span> <a
+                                            href="https://x.com/stompskichijoji/status/1964524482980372893?s=46&t=xeZ3KY5YJuo1VPZ__YJLkg"
+                                            target="_blank"
+                                            class="text-blue-400 hover:underline">https://x.com/stompskichijoji/status/1964524482980372893?s=46&t=xeZ3KY5YJuo1VPZ__YJLkg</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 制作フロー -->
+            <section id="flow" class="py-20 md:py-32 bg-black">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold scroll-glitch" data-text="FLOW">FLOW</h2>
+                        <p class="text-gray-400 mt-2 scroll-fade font-zen-old-mincho">制作フロー</p>
+                    </div>
+                    <div class="max-w-4xl mx-auto space-y-8">
+                        <!-- Step 1 -->
+                        <div
+                            class="flex flex-col md:flex-row items-start md:items-center gap-6 p-6 border border-gray-800 rounded-lg bg-gray-900/50 scroll-fade">
+                            <div class="relative w-20 h-20 md:w-24 md:h-24 flex-shrink-0 rounded-lg overflow-hidden">
+                                <!-- 背景: 黒 -->
+                                <div class="absolute inset-0 bg-black"></div>
+                                <!-- 番号 -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <span
+                                        class="text-3xl md:text-4xl font-black text-white tracking-widest font-cormorant">01</span>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold mb-2 font-cormorant">ご依頼ページより問い合わせ</h3>
+                                <p class="text-gray-400 leading-relaxed font-noto-serif">
+                                    まずは、ご依頼ページからご連絡ください。
+                                    その際に、直近の事前打ち合わせ希望日やご相談内容の概要を記載いただけるとその後をスムーズに進行できるようになります。
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="flex flex-col md:flex-row items-start md:items-center gap-6 p-6 border border-gray-800 rounded-lg bg-gray-900/50 scroll-fade"
+                            style="transition-delay: 100ms;">
+                            <div class="relative w-20 h-20 md:w-24 md:h-24 flex-shrink-0 rounded-lg overflow-hidden">
+                                <!-- 背景: 黒 -->
+                                <div class="absolute inset-0 bg-black"></div>
+                                <!-- 番号 -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <span
+                                        class="text-3xl md:text-4xl font-black text-white tracking-widest font-cormorant">02</span>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold mb-2 font-cormorant">日程調整のご連絡</h3>
+                                <p class="text-gray-400 leading-relaxed font-noto-serif">
+                                    内容を確認後、担当者よりメールにて打ち合わせ日程の調整をさせていただきます。
+                                    日程が確定次第、ZoomのURLを発行しお送りいたします。
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="flex flex-col md:flex-row items-start md:items-center gap-6 p-6 border border-gray-800 rounded-lg bg-gray-900/50 scroll-fade"
+                            style="transition-delay: 200ms;">
+                            <div class="relative w-20 h-20 md:w-24 md:h-24 flex-shrink-0 rounded-lg overflow-hidden">
+                                <!-- 背景: 黒 -->
+                                <div class="absolute inset-0 bg-black"></div>
+                                <!-- 番号 -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <span
+                                        class="text-3xl md:text-4xl font-black text-white tracking-widest font-cormorant">03</span>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold mb-2 font-cormorant">仮構成・見積もりのご提案</h3>
+                                <p class="text-gray-400 leading-relaxed font-noto-serif">
+                                    ヒアリング内容をもとに、簡易構成（A4一枚程度）とお見積もりを作成いたします。
+                                    通常、3〜5営業日以内にお送りいたします。<br class="hidden md:block">
+                                    <span class="text-sm">
+                                        ※案件の内容によっては期日を超過する場合がございます。
+                                        その際は、ヒアリング後にあらかじめお知らせいたします。
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Note -->
+                    <div class="max-w-4xl mx-auto mt-12 p-6 bg-gray-900/30 border border-gray-800 rounded-lg scroll-fade"
+                        style="transition-delay: 300ms;">
+                        <p class="text-gray-400 text-sm leading-relaxed text-center font-noto-serif">
+                            ご相談から仮構成の作成、お見積もりのご提示まで、すべて無料でご対応いたします。
+                            まずは「こんな映像を作りたい」という想いをお聞かせください。
+                            内容を丁寧にヒアリングし、目的に合った最適な形をご提案いたします。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ULDNLCとは -->
+            <section id="policy" class="py-20 md:py-32 bg-gray-900">
+                <div class="container mx-auto px-6 max-w-3xl">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold scroll-glitch" data-text="What is ULDNLC">What is
+                            ULDNLC</h2>
+                        <p class="text-gray-400 mt-2 scroll-fade font-zen-old-mincho">ULDNLCとは</p>
+                    </div>
+                    <div class="space-y-6 text-gray-300 scroll-fade">
+                        <p class="font-noto-serif">
+                            ULDNLCは、自由な発想と誠実なものづくりで、見えない価値を可視化し、世界へ届けるクリエイティブパートナーです。
+                        </p>
+                        <div class="pt-24 mt-16 border-t border-gray-800">
+                            <p class="text-4xl md:text-6xl font-normal text-white tracking-widest mb-12 scroll-glitch font-eb-garamond"
+                                data-text="Creative Beyond Limits">
+                                Creative Beyond Limits
+                            </p>
+                            <p class="text-lg text-gray-400 tracking-widest font-noto-serif">― 限界を超える創造を。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- お知らせ -->
+            <section id="news" class="py-20 md:py-32 relative bg-black">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold scroll-glitch" data-text="NEWS">NEWS</h2>
+                        <p class="text-gray-400 mt-2 scroll-fade font-zen-old-mincho">お知らせ</p>
+                    </div>
+                    <div class="max-w-3xl mx-auto space-y-4">
+                        <!-- お知らせアイテム -->
+                        <a href="#"
+                            class="block p-6 bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors scroll-fade">
+                            <div class="flex justify-between items-center">
+                                <p><time datetime="2025-09-27">2025.09.27</time> - 弊社のホームページを開設しました。</p>
+                                <span class="text-gray-400">&gt;</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 依頼のご相談 -->
+            <section id="contact" class="py-20 md:py-32 bg-gray-900">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold scroll-glitch" data-text="CONTACT">CONTACT</h2>
+                        <p class="text-gray-400 mt-2 scroll-fade font-zen-old-mincho">ご依頼はこちらから</p>
+                    </div>
+                    <form id="contact-form" class="max-w-xl mx-auto scroll-fade">
+                        <div class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-300">お名前（企業名）</label>
+                                <input type="text" id="name" name="name"
+                                    class="mt-1 block w-full bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-white focus:border-white text-white p-3"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-300">メールアドレス</label>
+                                <input type="email" id="email" name="email"
+                                    class="mt-1 block w-full bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-white focus:border-white text-white p-3"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-300">電話番号</label>
+                                <input type="tel" id="phone" name="phone"
+                                    class="mt-1 block w-full bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-white focus:border-white text-white p-3">
+                            </div>
+                            <div>
+                                <label for="source"
+                                    class="block text-sm font-medium text-gray-300">御社のことは何で知りましたか？</label>
+                                <select id="source" name="source"
+                                    class="mt-1 block w-full bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-white focus:border-white text-white p-3">
+                                    <option value="">選択してください</option>
+                                    <option value="HP">HP</option>
+                                    <option value="SNS">SNS</option>
+                                    <option value="知人友人">知人友人</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="work-type"
+                                    class="block text-sm font-medium text-gray-300">お願いしたいお仕事の種類はなんですか？</label>
+                                <select id="work-type" name="work-type"
+                                    class="mt-1 block w-full bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-white focus:border-white text-white p-3">
+                                    <option value="">選択してください</option>
+                                    <option value="映像制作">映像制作</option>
+                                    <option value="動画編集">動画編集</option>
+                                    <option value="写真撮影">写真撮影</option>
+                                    <option value="Web(HP)制作">Web(HP)制作</option>
+                                    <option value="その他">その他</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-300">ご相談内容（ご依頼）</label>
+                                <textarea id="message" name="message" rows="4"
+                                    class="mt-1 block w-full bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-white focus:border-white text-white p-3"
+                                    required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit"
+                                    class="bg-white text-black py-3 px-8 rounded-full font-bold hover:bg-gray-200 transition-all text-lg">送信する</button>
+                            </div>
+                        </div>
+                        <div id="form-status" class="mt-6 text-center text-lg"></div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- ポリシー -->
+            <section id="privacy-policy" class="py-20 md:py-32 bg-black">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold scroll-glitch" data-text="POLICY">POLICY</h2>
+                        <p class="text-gray-400 mt-2 scroll-fade font-zen-old-mincho">プライバシーポリシー</p>
+                    </div>
+                    <div
+                        class="max-w-3xl mx-auto text-gray-300 space-y-8 scroll-fade font-noto-serif leading-relaxed text-sm md:text-base">
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2">1. 個人情報の取得</h3>
+                            <p>
+                                株式会社ULDNLC（以下、「当社」といいます。）は、適法かつ公正な手段によって、業務遂行上必要な範囲内で個人情報を取得します。
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2">2. 個人情報の利用目的</h3>
+                            <p>
+                                当社が取得した個人情報は、以下の目的で利用します。
+                            </p>
+                            <ul class="list-disc list-inside mt-2 space-y-1 text-gray-400">
+                                <li>映像制作、動画編集、写真撮影、Web制作等の業務遂行のため</li>
+                                <li>お問い合わせに対する回答やご連絡のため</li>
+                                <li>サービスに関するご案内や資料送付のため</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2">3. 個人情報の第三者提供</h3>
+                            <p>
+                                当社は、法令に定める場合を除き、個人情報を事前に本人の同意を得ることなく第三者に提供しません。
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2">4. 個人情報の管理</h3>
+                            <p>
+                                当社は、個人情報の正確性を保ち、これを安全に管理するため、個人情報の紛失、破壊、改ざん及び漏洩などを防止するための適正な措置を講じます。
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2">5. お問い合わせ窓口</h3>
+                            <p>
+                                本ポリシーに関するお問い合わせは、当サイトのお問い合わせフォームよりお願いいたします。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- フッター -->
+        <footer class="bg-black py-12">
+            <div class="container mx-auto px-6 text-center text-gray-400">
+                <p>&copy; 2025 ULDNLC Inc. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Transition Overlay -->
+        <div id="background-transition-overlay"></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- モバイルメニューの開閉 ---
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a.mobile-nav-link');
+
+            menuButton.addEventListener('click', () => {
+                menuButton.classList.toggle('active');
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menuButton.classList.remove('active');
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // --- スクロールに応じたフェードインアニメーション ---
+            const scrollElements = document.querySelectorAll('.scroll-fade, .scroll-glitch');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.2
+            });
+
+            scrollElements.forEach(el => {
+                observer.observe(el);
+            });
+
+            // --- Section Transition ---
+            const backgroundOverlay = document.getElementById('background-transition-overlay');
+            if (backgroundOverlay) {
+                const rows = 10;
+                const cols = 20;
+                for (let i = 0; i < rows * cols; i++) {
+                    const box = document.createElement('span');
+                    const row = Math.floor(i / cols);
+                    const col = i % cols;
+                    // Create diagonal delay
+                    box.style.animationDelay = `${(row + col) * 0.04}s`;
+                    backgroundOverlay.appendChild(box);
+                }
+            }
+
+            function playTransition() {
+                if (backgroundOverlay) {
+                    backgroundOverlay.classList.add('is-playing');
+                    setTimeout(() => {
+                        backgroundOverlay.classList.remove('is-playing');
+                    }, 1200); // Animation duration + delay buffer
+                }
+            }
+
+            // --- スクロールに応じてアクティブなナビゲーションリンクを変更 & トランジション再生 ---
+            const sections = document.querySelectorAll('main section[id]');
+            const navLinks = document.querySelectorAll('header nav a.nav-link');
+            const header = document.getElementById('header');
+            let activeSection = '';
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const headerHeight = header.offsetHeight;
+                    if (window.pageYOffset >= (sectionTop - headerHeight * 1.5)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 2) {
+                    current = sections[sections.length - 1].getAttribute('id');
+                }
+
+                if (current !== '' && current !== activeSection) {
+                    playTransition();
+                    activeSection = current;
+                } else if (window.pageYOffset < sections[0].offsetTop - header.offsetHeight * 1.5 && activeSection !== '') {
+                    activeSection = '';
+                }
+
+
+                navLinks.forEach(link => {
+                    link.classList.remove('nav-link-active');
+                    if (link.getAttribute('href') === '#' + current && current !== '') {
+                        link.classList.add('nav-link-active');
+                    }
+                });
+            });
+
+
+            // --- お問い合わせフォームの送信処理 ---
+            const contactForm = document.getElementById('contact-form');
+            const formStatus = document.getElementById('form-status');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    const formData = new FormData(contactForm);
+                    const action = "https://formspree.io/f/xjkagoly";
+
+                    if (action === "YOUR_FORMSPREE_ENDPOINT_HERE") {
+                        formStatus.textContent = 'フォーム設定が完了していません。';
+                        formStatus.style.color = 'red';
+                        return;
+                    }
+
+                    formStatus.textContent = '送信中...';
+                    formStatus.style.color = 'white';
+
+                    try {
+                        const response = await fetch(action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            formStatus.textContent = 'お問い合わせありがとうございます。メッセージが送信されました。';
+                            formStatus.style.color = 'lightgreen';
+                            contactForm.reset();
+                        } else {
+                            response.json().then(data => {
+                                if (Object.hasOwn(data, 'errors')) {
+                                    formStatus.textContent = data["errors"].map(error => error["message"]).join(", ");
+                                } else {
+                                    formStatus.textContent = 'エラーが発生しました。もう一度お試しください。';
+                                }
+                                formStatus.style.color = 'red';
+                            })
+                        }
+                    } catch (error) {
+                        formStatus.textContent = 'エラーが発生しました。もう一度お試しください。';
+                        formStatus.style.color = 'red';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

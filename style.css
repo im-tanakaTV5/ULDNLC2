@@ -1,0 +1,269 @@
+/* カスタムスタイル */
+body {
+    font-family: 'Noto Serif JP', serif;
+    background-color: #0a0a0a;
+    color: #e5e5e5;
+    /* 日本語の約物（「」や（）など）の隙間を自動で詰める */
+    font-feature-settings: "palt";
+    /* フォントを滑らかに見せる（Mac/iOS向け） */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* iOSで横向きにした時に文字サイズが勝手に変わるのを防ぐ */
+    -webkit-text-size-adjust: 100%;
+}
+
+/* =========================================
+   Base & Typography
+   プロっぽい文字詰めとフォント描画設定
+   ========================================= */
+
+/* ご要望のテキスト整形ルール（スマホで見やすく、禁則処理を守る） */
+p {
+    /* 英単語の途中で改行させない、でも長すぎるURLなどは折り返す */
+    overflow-wrap: break-word;
+    /* 禁則処理を厳格にする（「ー」や「っ」が行頭に来ないようにする） */
+    line-break: strict;
+    /* 両端揃え（justify）はスマホだと文字間隔がガタガタになりやすいので左揃えが無難 */
+    text-align: left;
+}
+
+/* =========================================
+   Images
+   画像周りのレイアウト崩れ防止
+   ========================================= */
+img {
+    /* 親要素からはみ出さないようにする */
+    max-width: 100%;
+    height: auto;
+    /* 画像の下にできる謎の隙間（ディセンダー）を消す */
+    vertical-align: bottom;
+}
+
+/* =========================================
+   Forms (Mobile Optimization)
+   スマホでの入力ストレスをなくす設定
+   ========================================= */
+input,
+textarea,
+select {
+    /* フォントサイズが16px未満だとiOSは入力時に自動ズームしてしまうため回避 */
+    font-size: 16px;
+    /* ブラウザデフォルトのダサいスタイルや影をリセット */
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+/* =========================================
+   Interaction & Accessibility
+   操作性の向上とアクセシビリティ対応
+   ========================================= */
+
+/* スマホ（タッチデバイス）での誤タップ・hover残り防止 */
+@media (hover: hover) {
+    a:hover {
+        opacity: 0.7;
+        /* マウス操作時のみ透過させる */
+        transition: opacity 0.3s;
+    }
+}
+
+/* マウス操作時はフォーカス枠を消すが、キーボード操作時は青枠を出す（アクセシビリティ） */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid #0056b3;
+    /* サイトのテーマカラーに合わせて変更可 */
+    outline-offset: 2px;
+}
+
+/* =========================================
+   Mobile Safe Area
+   iPhone X以降の下部バー対策
+   ========================================= */
+footer {
+    /* 下部のホームバーにコンテンツが被らないように余白を確保 */
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* 見出し用のフォントを適用 */
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.font-eb-garamond {
+    font-family: 'EB Garamond', serif;
+}
+
+.font-cormorant {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.font-noto-serif {
+    font-family: 'Noto Serif JP', serif;
+}
+
+.font-zen-old-mincho {
+    font-family: 'Zen Old Mincho', serif;
+}
+
+.wrapper {
+    overflow-x: hidden;
+}
+
+/* 背景ビデオのコンテナ */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -2;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ビデオの上の黒いオーバーレイ */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+/* スキャンラインエフェクト */
+.scanline-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0) 50%,
+            rgba(0, 0, 0, 0.1) 50%,
+            rgba(0, 0, 0, 0.15));
+    background-size: 100% 4px;
+    animation: scan 10s linear infinite;
+}
+
+@keyframes scan {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 100vh;
+    }
+}
+
+
+/* スクロールアニメーション用の基本スタイル */
+.scroll-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* グリッチアニメーション (Medium Version) */
+.scroll-glitch {
+    opacity: 0;
+    position: relative;
+}
+
+.scroll-glitch.visible {
+    opacity: 1;
+}
+
+.scroll-glitch.visible::before,
+.scroll-glitch.visible::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.scroll-glitch.visible::before {
+    text-shadow: -2px 0 #ff00c1;
+    animation: glitch-medium 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.scroll-glitch.visible::after {
+    text-shadow: 2px 0 #00fff9;
+    animation: glitch-medium 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both;
+}
+
+@keyframes glitch-medium {
+    0% {
+        transform: translate(0);
+        opacity: 0;
+    }
+
+    10% {
+        transform: translate(-5px, 2px);
+        opacity: 1;
+    }
+
+    20% {
+        transform: translate(5px, -2px);
+        opacity: 1;
+    }
+
+    30%,
+    100% {
+        transform: translate(0);
+        opacity: 0;
+    }
+}
+
+
+/* ナビゲーションのメニューボタン（ハンバーガー）のスタイル */
+.menu-trigger span {
+    transition: all .4s;
+    box-sizing: border-box;
+}
+
+.menu-trigger.active span:nth-of-type(1) {
+    transform: translateY(10px) rotate(-45deg);
+}
+
+.menu-trigger.active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.menu-trigger.active span:nth-of-type(3) {
+    transform: translateY(-10px) rotate(45deg);
+}
+
+/* スクロール時にアクティブなナビゲーションリンクを示すスタイル */
+.nav-link-active {
+    color: white !important;
+    border-color: white !important;
+    /* !important を追加して確実にスタイルを適用 */
+    font-weight: 700;
+}
